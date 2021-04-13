@@ -6,7 +6,8 @@ $mw: 1170;
 $md1: $mw+12;
 $md2: 991.98;
 $md3: 767.98;
-$md4: 479.98;
+$md4: 575.98;
+$md5: 479.98;
 
 $main-fontfamily: Montserrat;
 
@@ -218,6 +219,7 @@ body {
 
 .main-block {
     margin: 0px 0px 100px 0px;
+
     &__main-image-block {
         position: relative;
         height: 411px;
@@ -265,5 +267,77 @@ body {
     &__meeting-button {
         display: block;
         margin: 0 auto;
+    }
+}
+
+.stats-item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 170px;
+    margin: 0px 0px 20px 0px;
+
+    @media (max-width:$md1+px) {
+        flex: 1 1 25%;
+    }
+
+    &:nth-child(3) {
+        flex: 0 1 370px;
+
+        @media (max-width:$md1+px) {
+            flex: 1 1 25%;
+        }
+    }
+
+
+    &__value {
+        color: #007397;
+        font-family: "PT Serif";
+        font-size: 54px;
+        font-weight: 400;
+        line-height: 54px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__description {
+        margin: 3px 0px 0px 0px;
+        color: #aec3d4;
+        font-family: $main-fontfamily;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: center;
+    }
+}
+
+.relations {
+    margin: 0px 0px 100px 0px;
+
+    &__description {
+        max-width: 670px;
+        margin: 40px 0px 0px 0px;
+    }
+
+    &__stats {
+        margin: 40px 0px 28px 0px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media (max-width:$md1+px) {
+            justify-content: center;
+        }
+
+        @media (max-width:$md4+px) {
+            flex-direction: column;
+        }
+    }
+
+    &__read-more-button {
+        display: block;
+        width: 270px;
+        @media (max-width:$md4+px){
+            margin: 0 auto;
+        }
     }
 }

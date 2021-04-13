@@ -38,6 +38,61 @@ body {
     }
 }
 
+.title {
+    color: #3c3f3d;
+    font-family: "PT Serif";
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 48px;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.image-with-trapezoid {
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 420px;
+        height: 160%;
+        left: -100px;
+        top: -120px;
+        transform: rotate(20deg);
+        background-image: linear-gradient(198deg, #007397 0%, rgba(0, 115, 151, 0) 100%);
+    }
+}
+
+.description {
+    color: #646667;
+    font-family: $main-fontfamily;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 36px;
+}
+
+.button {
+    color: #ffffff;
+    font-family: $main-fontfamily;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #007397;
+    cursor: pointer;
+    padding: 20px 32px;
+    border: none;
+    transition: 0.5s all;
+
+    &:hover {
+        background-color: #00546d;
+    }
+}
+
 .header {
     padding: 40px 0;
 
@@ -77,12 +132,12 @@ body {
             z-index: -1;
             background-color: #fff;
             overflow: auto;
-            transition: 0.3s all;
+            transition: 0.5s all;
+            padding: 70px 0 20px 20px;
+            flex-direction: column;
 
             &.active {
                 top: 0;
-                flex-direction: column;
-                padding: 70px 0 20px 20px;
             }
         }
     }
@@ -161,8 +216,54 @@ body {
     }
 }
 
-.temp-space {
-    width: 100%;
-    height: 1500px;
-    background-color: rgb(27, 140, 226);
+.main-block {
+    margin: 0px 0px 100px 0px;
+    &__main-image-block {
+        position: relative;
+        height: 411px;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        bottom: 94px;
+        right: 0;
+        max-width: 770px;
+        text-shadow: 0 3px 1px rgba(0, 0, 0, 0.6);
+        color: #ffffff;
+
+        @media (max-width:$md3+px) {
+            padding: 0 10px;
+            font-size: 26px;
+            line-height: 36px;
+            bottom: 40px;
+        }
+    }
+
+    &__description {
+        text-align: center;
+        max-width: 970px;
+        margin: 0 auto;
+        padding: 48px 0 46px 0;
+
+        @media (max-width:$md3+px) {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+
+    &__meeting-button {
+        display: block;
+        margin: 0 auto;
+    }
 }

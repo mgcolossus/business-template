@@ -41,5 +41,3 @@ for (tabSelector of tabsSelectors) {
     });
   });
 }
-
-

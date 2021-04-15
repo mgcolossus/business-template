@@ -355,9 +355,16 @@ body {
 
     &__tabs {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         flex: 1 1 35%;
+
+        @media (max-width:$md3+px){
+            margin: 15px 0px 0px 0px;
+            flex: 1 1 100%;
+            justify-content: center;
+        }
     }
 
     &__tabs-item {
@@ -373,6 +380,15 @@ body {
 
         &_active {
             color: #007397;
+        }
+
+        @media (max-width:$md3+px){
+            flex: 0 1 33%;
+            max-width:none;
+            padding: 10px 0; 
+        }
+        @media (max-width:$md4+px){
+            flex: 0 1 100%;
         }
     }
 
